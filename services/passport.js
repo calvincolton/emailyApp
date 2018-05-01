@@ -20,7 +20,8 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback'
+      callbackURL: '/auth/google/callback',
+      proxy: true // handles http/https routing for the above callback, i.e. 'https://intense-ridge-85505.herokuapp.com/auth/google/callback' or 'http://localhost:5000/auth/google/callback'
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleID: profile.id })
