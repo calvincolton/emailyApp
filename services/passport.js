@@ -23,17 +23,13 @@ passport.use(
       callbackURL: '/auth/google/callback',
       proxy: true // handles http/https routing for the above callback, i.e. 'https://intense-ridge-85505.herokuapp.com/auth/google/callback' or 'http://localhost:5000/auth/google/callback'
     },
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleID: profile.id })
-        .then((existingUser) => {
-          if (existingUser) {
-            done(null, existingUser);
-          } else {
-            new User({ googleID: profile.id })
-              .save()
-              .then(user => done(null, user));
-          }
-        });
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ googleID: profile.id });
+      if (existingUser) {
+        return done(null, existingUser);
+      }
+      const user = await new User({ googleID: profile.id }).save();
+      done(null, user);
     }
   )
 );
