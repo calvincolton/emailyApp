@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import StripeWrapper from './StripeWrapper';
 
 class Header extends Component {
   renderContent() {
@@ -12,9 +13,10 @@ class Header extends Component {
           <li><a href="/auth/google">Log in with Google</a></li>
         );
       default:
-        return (
-          <li><a href="/api/logout">Log out</a></li>
-        );
+        return [
+          <li key="stripeWrapper"><StripeWrapper /></li>,
+          <li key="logout"><a href="/api/logout">Log out</a></li>
+        ];
     }
   }
 
