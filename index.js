@@ -26,7 +26,7 @@ app.use(passport.session());
 // routes
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
-require('./routes/authRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 // handling client assets in production
 if (process.env.NODE_ENV === 'production') {
