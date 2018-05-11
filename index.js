@@ -4,9 +4,6 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 const keys = require('./config/keys');
-const authRoutes = require('./routes/authRoutes');
-const billingRoutes = require('./routes/billingRoutes');
-const surveyRoutes = require('./routes/surveyRoutes');
 require('./models/User');
 require('./models/Survey');
 require('./services/passport');
@@ -27,9 +24,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // routes
-authRoutes(app);
-billingRoutes(app);
-surveyRoutes(app);
+require('./routes/authRoutes')(app);
+require('./routes/billingRoutes')(app);
+require('./routes/authRoutes')(app);
 
 // handling client assets in production
 if (process.env.NODE_ENV === 'production') {
