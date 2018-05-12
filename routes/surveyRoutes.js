@@ -10,6 +10,9 @@ module.exports = app => {
   app.get('/api/surveys/thanks', (req, res) => {
     res.send('Thanks for giving us your feedback!');
   });
+  app.get('/api/surveys/improve', (req, res) => {
+    res.send('Let us know what we can do to improve your experience...');
+  });
 
   app.post('/api/surveys', requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
