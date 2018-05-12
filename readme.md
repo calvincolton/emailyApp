@@ -9,3 +9,4 @@ https://console.developers.google.com/apis/dashboard
 Stripe (for processing payments)
 https://dashboard.stripe.com/account/apikeys
 SendGrid (as an email provider)
+https://app.sendgrid.com/
