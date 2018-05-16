@@ -10,3 +10,6 @@ Stripe (for processing payments)
 https://dashboard.stripe.com/account/apikeys
 SendGrid (as an email provider)
 https://app.sendgrid.com/
+
+MaterializeCSS provides bootstrapped styling for client side design
+https://materializecss.com/
