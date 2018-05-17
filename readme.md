@@ -15,8 +15,7 @@ https://dashboard.stripe.com/account/apikeys
 SendGrid (as an email provider)<br />
 https://app.sendgrid.com/
 
-localtunnel provides a local tunnel for webhook data<br />
-https://myuniquesubdomain1479haight.localtunnel.me<br />
+localtunnel provides a local tunnel for webhook data (https://myuniquesubdomain1479haight.localtunnel.me, https://myuniquesubdomain1479haight.localtunnel.me/api/surveys/webhooks)<br />
 https://github.com/localtunnel/localtunnel
 
 MaterializeCSS provides bootstrapped styling for client side design<br />
