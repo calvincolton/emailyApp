@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import SurveyForm from './SurveyForm';
-import SurveyReview from './SurveyReview';
+import SurveyFormReview from './SurveyFormReview';
 
 class SurveyNew extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class SurveyNew extends Component {
 
   renderContent() {
     if (this.state.showReview) {
-      return <SurveyReview onCancel={() => this.setState({ showReview: false })} />;
+      return <SurveyFormReview onCancel={() => this.setState({ showReview: false })} />;
     }
     return <SurveyForm onSurveySubmit={() => this.setState({ showReview: true })} />
   }

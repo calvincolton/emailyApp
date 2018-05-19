@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
-import SurveyNew from './SurveyNew';
+import SurveyNew from './surveys/SurveyNew';
 // actions
 import * as actions from '../actions';
 

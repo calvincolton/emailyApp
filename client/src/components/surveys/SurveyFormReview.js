@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import surveyFormFields from './surveyFormFields';
-import * as actions from '../actions';
+import * as actions from '../../actions';
 
-const SurveyReview = ({ onCancel, formValues, submitSurvey, history }) => {
+const SurveyFormReview = ({ onCancel, formValues, submitSurvey, history }) => {
   const reviewFields = surveyFormFields.map(({ name, label }) => {
     return (
       <div key={name}>
@@ -41,4 +41,4 @@ function mapStateToProps(state) {
   return { formValues: state.form.surveyForm.values };
 }
 
-export default connect(mapStateToProps, actions)(withRouter(SurveyReview));
+export default connect(mapStateToProps, actions)(withRouter(SurveyFormReview));
