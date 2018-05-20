@@ -33,6 +33,7 @@ module.exports = app => {
 
     // Send email here
     const mailer = new Mailer(survey, surveyTemplate(survey));
+    
     try {
       await mailer.send();
       await survey.save();
